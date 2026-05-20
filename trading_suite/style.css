@@ -1,0 +1,179 @@
+/* Premium Minimalist Grey/White Theme for Streamlit with Dark Sidebar */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+/* Main App Layout */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+}
+
+[data-testid="stHeader"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main .block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, p, label {
+    color: #000000 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+    color: #212529 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Sidebar Premium Styling */
+[data-testid="stSidebar"] {
+    background-image: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-testid="stSidebarNav"] {
+    padding-top: 2rem !important;
+}
+
+[data-testid="stSidebarNav"] ul {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+[data-testid="stSidebarNav"] li {
+    margin-bottom: 0.5rem !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-testid="stSidebarNav"] li:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px);
+}
+
+[data-testid="stSidebarNav"] span {
+    color: #f8fafc !important;
+    font-weight: 500 !important;
+}
+
+/* Fix for Sidebar Collapse/Expand Icon Text */
+[data-testid="stSidebarCollapseButton"] span, 
+[data-testid="collapsedControl"] span {
+    font-family: "Material Icons" !important;
+    font-size: 0 !important; /* Hide text ligature */
+}
+
+[data-testid="stSidebarCollapseButton"] span::before,
+[data-testid="collapsedControl"] span::before {
+    content: "❯"; /* Simple Arrow */
+    font-size: 1.5rem !important;
+    color: #333333 !important;
+    visibility: visible !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarCollapseButton"] span::before {
+    content: "❮"; /* Left arrow when sidebar is open */
+    color: #ffffff !important;
+}
+
+[data-testid="stSidebarNav"] a {
+    background-color: transparent !important;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background: linear-gradient(90deg, rgba(0, 120, 255, 0.2) 0%, transparent 100%) !important;
+    border-left: 4px solid #0078ff !important;
+}
+
+/* Sidebar Logo/Title area */
+.sidebar-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+}
+
+/* Video Styling */
+video {
+    border-radius: 15px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100% !important;
+}
+
+/* Premium Cards */
+.service-card, .metric-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .metric-card:hover {
+    transform: translateY(-6px);
+    border-color: #d1d5db;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Streamlit Buttons */
+.stButton>button {
+    border-radius: 50px !important;
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+    font-weight: 600 !important;
+    padding: 0.5rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1) !important;
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+}
+
+/* Streamlit Input Fields Visibility Fix */
+div[data-baseweb="input"] input, 
+div[data-baseweb="select"] div,
+.stTextInput input, 
+.stNumberInput input, 
+.stSelectbox div, 
+.stDateInput input {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important; /* Fix for some browsers */
+}
+
+div[data-baseweb="input"] > div, div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+div[data-baseweb="input"] > div:focus-within, div[data-baseweb="select"] > div:focus-within {
+    border-color: #0078ff !important;
+    box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.1) !important;
+}
+
+/* Custom HR */
+hr {
+    border: none !important;
+    height: 1px !important;
+    background: linear-gradient(to right, transparent, #e5e7eb, transparent) !important;
+    margin: 40px 0 !important;
+}
